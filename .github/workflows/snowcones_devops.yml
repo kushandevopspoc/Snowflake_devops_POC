@@ -43,7 +43,6 @@ jobs:
         
       # Deploy pipeline later we can make it branch specific in v2
       - name: Deploy data pipeline to main
-        run: snow git execute \
-            "@${REPO_NAME}/branches/main/PROD_US_DOMAINS/STAGING_DATA/Tables/"
+        run: snow git execute "@${REPO_NAME}/branches/main/PROD_US_DOMAINS/STAGING_DATA/Tables/"
 
         
