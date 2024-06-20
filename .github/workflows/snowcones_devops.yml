@@ -43,7 +43,7 @@ jobs:
         
       # list the files in folder
       - name: List the files in folder
-        run: snow git list-files "@${REPO_NAME}/branches/main/PROD_US_DOMAINS/STAGING_DATA/Tables/"
+        run: snow git list-files "@${REPO_NAME}/branches/main/*.sql"
 
       # Deploy pipeline later we can make it branch specific in v2     
       - name: Deploy file to main branch
