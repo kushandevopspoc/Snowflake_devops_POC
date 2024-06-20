@@ -41,8 +41,12 @@ jobs:
       - name: Fetch repository changes
         run: snow git fetch "${REPO_NAME}"
         
-      # Deploy pipeline later we can make it branch specific in v2
-      - name: Deploy data pipeline to main
+      # list the files in folder
+      - name: List the files in folder
         run: snow git list-files "@${REPO_NAME}/branches/main/PROD_US_DOMAINS/STAGING_DATA/Tables/"
+
+      # Deploy pipeline later we can make it branch specific in v2     
+      - name: Deploy file to main branch
+        run: snow git execute "@${REPO_NAME}/branches/main/PROD_US_DOMAINS/STAGING_DATA/Tables/"
 
         
