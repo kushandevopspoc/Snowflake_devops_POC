@@ -8,5 +8,6 @@
 CREATE OR ALTER TABLE PROD_US_DOMAINS.STAGING_DATA.EMPLOYEE (
   EMP_ID NUMBER(38,0),
   EMP_NAME varchar,
-  EMP_BRANCH varchar
+  EMP_BRANCH varchar,
+  EMP_SAL NUMBER(38,0)
 ) data_retention_time_in_days = 1;
