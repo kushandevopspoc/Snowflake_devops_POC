@@ -1,4 +1,4 @@
--- ALWAYS USE ACCOUN ADMIN LEVEL ROLE
+/*-- ALWAYS USE ACCOUN ADMIN LEVEL ROLE
 USE ROLE ACCOUNTADMIN;
 
 -- CREATING A SMALL WAREHOUSE FOR COMPUTE NEEDS
@@ -38,7 +38,7 @@ alter git repository SNOWCONES_DEVOPS_POC.POC.GIT_REPO_STG fetch;
 show git branches in GIT_REPO_STG;
 
 -- listing the files from repo:
-list @GIT_REPO_STG/branches/;
+list @GIT_REPO_STG/branches/;*/
 
 -- executing the files directly from repo:
 EXECUTE IMMEDIATE FROM @git_repo_stg/branches/main/PROD_US_DOMAINS/STAGING_DATA/Tables/T_Devops_Demo.sql;
