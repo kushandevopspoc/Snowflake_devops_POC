@@ -47,6 +47,6 @@ jobs:
 
       # Deploy pipeline later we can make it branch specific in v2     
       - name: Deploy file to main branch
-        run: snow git execute "@${REPO_NAME}/branches/main/*.sql"
+        run: snow git execute "@${REPO_NAME}/branches/main/deployment.sql"
 
         
