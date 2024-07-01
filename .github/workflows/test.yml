@@ -18,13 +18,14 @@ jobs:
   # The type of runner that the job will run on
     runs-on: ubuntu-latest
     env:
+      name: Production
       SNOWFLAKE_CONNECTIONS_DEFAULT_ACCOUNT : ${{ secrets.SNOWFLAKE_ACCOUNT }}
       SNOWFLAKE_CONNECTIONS_DEFAULT_USER: ${{ secrets.SNOWFLAKE_ROLE }}
       SNOWFLAKE_CONNECTIONS_DEFAULT_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
       #SNOWFLAKE_DOMAINS_DB: ${{ env.SNOWFLAKE_DOMAINS_DB }}
       #SNOWFLAKE_DOMAINS_SCHEMA: ${{ env.SNOWFLAKE_DOMAINS_SCHEMA }}
       #SNOWFLAKE_DOMAINS_GIT_STG: ${{ env.SNOWFLAKE_DOMAINS_GIT_STG }}
-      name: Production
+      
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # display the env variables
