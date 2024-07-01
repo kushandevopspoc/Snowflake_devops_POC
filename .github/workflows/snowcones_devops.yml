@@ -17,14 +17,15 @@ jobs:
   deploy:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
-
-    environment: production
-      REPO_NAME: "snowcones_devops_poc.poc.git_repo_stg"
-      # Read connection secrets
-      SNOWFLAKE_CONNECTIONS_DEFAULT_ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }}
-      SNOWFLAKE_CONNECTIONS_DEFAULT_USER: ${{ secrets.SNOWFLAKE_USER }}
-      SNOWFLAKE_CONNECTIONS_DEFAULT_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
-
+    environment: Production
+    # Read connection secrets and variables
+      SNOWFLAKE_CONNECTIONS_DEFAULT_ACCOUNT: ${{ secrets.SNOWFLAKE_PROD_ACCOUNT }}
+      SNOWFLAKE_CONNECTIONS_DEFAULT_USER: ${{ secrets.SNOWFLAKE_PROD_USER }}
+      SNOWFLAKE_CONNECTIONS_DEFAULT_PASSWORD: ${{ secrets.SNOWFLAKE_PROD_PASSWORD }}
+      REPO_NAME: ${{ env.SNOWFLAKE_PROD_GIT_STG }}
+      SNOWFLAKE_PROD_DOMAINS_DB: ${{ env.SNOWFLAKE_PROD_DOMAINS_DB }}
+      SNOWFLAKE_PROD_DOMAINS_SCHEMA: ${{ env.SNOWFLAKE_PROD_DOMAINS_SCHEMA }}
+      
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
