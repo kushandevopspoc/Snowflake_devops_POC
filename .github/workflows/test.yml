@@ -31,5 +31,4 @@ jobs:
       # display the env variables
       - name: Display custom env variables
         run: |
-          echo "${{ env.SNOWFLAKE_DOMAINS_DB }}"
-          echo "${{ env.SNOWFLAKE_DOMAINS_DB }}"
+          echo "${{ vars.SNOWFLAKE_DOMAINS_DB }}"
