@@ -18,7 +18,7 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
 
-    env:
+    environment: production
       REPO_NAME: "snowcones_devops_poc.poc.git_repo_stg"
       # Read connection secrets
       SNOWFLAKE_CONNECTIONS_DEFAULT_ACCOUNT: ${{ secrets.SNOWFLAKE_ACCOUNT }}
