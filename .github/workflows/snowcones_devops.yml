@@ -24,6 +24,7 @@ jobs:
       SNOWFLAKE_CONNECTIONS_DEFAULT_ACCOUNT : ${{ secrets.SNOWFLAKE_ACCOUNT }}
       SNOWFLAKE_CONNECTIONS_DEFAULT_USER: ${{ secrets.SNOWFLAKE_USER }}
       SNOWFLAKE_CONNECTIONS_DEFAULT_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
+      SNOWFLAKE_CONNECTIONS_DEFAULT_DATABASE: ${{ vars.SNOWFLAKE_DOMAINS_DB }}
       
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
