@@ -1,3 +1,4 @@
+[connections]
 [connections.default]
 warehouse = "POC_WH"
 role = "ACCOUNTADMIN"
