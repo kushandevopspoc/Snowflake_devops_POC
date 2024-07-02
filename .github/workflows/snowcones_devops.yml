@@ -17,16 +17,18 @@ jobs:
   deployment:
   # The type of runner that the job will run on
     runs-on: ubuntu-latest
-    env:
-        SNOWFLAKE_CONNECTIONS_DEFAULT_ACCOUNT : ${{ secrets.SNOWFLAKE_ACCOUNT }}
-        SNOWFLAKE_CONNECTIONS_DEFAULT_USER: ${{ secrets.SNOWFLAKE_ROLE }}
-        SNOWFLAKE_CONNECTIONS_DEFAULT_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
     environment: Production
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout repository
         uses: actions/checkout@v4
+        
+      # Snowflake creds from github secrets for the production env
+        env:
+          SNOWFLAKE_CONNECTIONS_DEFAULT_ACCOUNT : ${{ secrets.SNOWFLAKE_ACCOUNT }}
+          SNOWFLAKE_CONNECTIONS_DEFAULT_USER: ${{ secrets.SNOWFLAKE_ROLE }}
+          SNOWFLAKE_CONNECTIONS_DEFAULT_PASSWORD: ${{ secrets.SNOWFLAKE_PASSWORD }}
         
       # Install Snowflake CLI GitHub Action and point to config file
       - uses: Snowflake-Labs/snowflake-cli-action@v1
