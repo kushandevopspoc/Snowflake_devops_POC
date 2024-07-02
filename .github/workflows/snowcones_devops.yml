@@ -36,6 +36,12 @@ jobs:
         with:
           cli-version: "latest"
           default-config-file-path: "config.toml"
+
+      # Use the CLI
+      - name: Test version
+        run: |
+          snow --version
+          snow connection test
           
       # Update Snowflake's copy of the repository
       - name: Fetch repository changes
