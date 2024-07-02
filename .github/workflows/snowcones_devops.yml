@@ -63,6 +63,7 @@ jobs:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
     environment: Production
+    if: github.event.ref == 'refs/heads/main'
     needs: [dev-deployment]
     # Snowflake creds from github secrets for the production env
     env:
