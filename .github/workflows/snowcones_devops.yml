@@ -64,7 +64,7 @@ jobs:
     runs-on: ubuntu-latest
     environment: Production
     if: github.event.ref == 'refs/heads/main'
-    needs: [dev-deployment]
+    #needs: [dev-deployment]
     # Snowflake creds from github secrets for the production env
     env:
       SNOWFLAKE_CONNECTIONS_DEFAULT_ACCOUNT : ${{ secrets.SNOWFLAKE_ACCOUNT }}
