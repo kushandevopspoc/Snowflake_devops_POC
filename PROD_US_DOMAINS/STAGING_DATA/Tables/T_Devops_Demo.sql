@@ -7,6 +7,5 @@
 -- TABLE CREATION:
 CREATE OR ALTER TABLE {{database}}.{{schema_nm}}.EMPLOYEE (
   EMP_ID NUMBER(38,0),
-  EMP_NAME varchar,
-  EMP_BRANCH varchar
+  EMP_NAME varchar
 ) data_retention_time_in_days = 1;
