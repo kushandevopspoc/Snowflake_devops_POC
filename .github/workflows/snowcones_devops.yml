@@ -32,6 +32,18 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      # Including SQL linter to validate code  
+      - name: Installing Python
+        uses: "actions/setup-python@v2"
+        with:
+            python-version: "3.8"
+            
+      - name: Install SQLFluff
+        run: "pip install sqlfluff==0.3.6"
+        
+      #- name: Lint scripts
+        #run: "sqlfluff lint PROD_US_DOMAINS"
         
       # Install Snowflake CLI GitHub Action and point to config file
       - name: Development connection
