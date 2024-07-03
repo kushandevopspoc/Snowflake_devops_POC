@@ -5,7 +5,7 @@
 --CREATE OR REPLACE SCHEMA STAGING_DATA;
 
 -- TABLE CREATION:
-CREATE OR ALTER TABLE {{database}}.{{schema_nm}}.EMPLOYEE (
+CREATE OR ALTER TABLE "{{database}}"."{{schema_nm}}".EMPLOYEE (
   EMP_ID NUMBER(38,0),
   EMP_NAME varchar,
   EMP_DEP varchar,
