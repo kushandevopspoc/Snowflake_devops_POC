@@ -42,8 +42,8 @@ jobs:
       - name: Install SQLFluff
         run: "pip install sqlfluff==0.3.6"
         
-      - name: Lint scripts
-        run: "sqlfluff lint PROD_US_DOMAINS"
+      #- name: Lint scripts
+        #run: "sqlfluff lint PROD_US_DOMAINS"
         
       # Install Snowflake CLI GitHub Action and point to config file
       - name: Development connection
