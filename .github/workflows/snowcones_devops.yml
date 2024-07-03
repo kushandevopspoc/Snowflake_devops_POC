@@ -52,7 +52,7 @@ jobs:
         
       # list the files in folder
       - name: List the files in folder
-        run: snow git list-files "@${{vars.SNOWFLAKE_DOMAINS_GIT_STG}}/branches/main/"
+        run: snow git list-files "@${{vars.SNOWFLAKE_DOMAINS_GIT_STG}}/branches/Development/"
 
       # Deploy pipeline later we can make it branch specific in v2     
       - name: Deploy Objects to Snowflake Development environment
