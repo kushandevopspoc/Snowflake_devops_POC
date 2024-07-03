@@ -6,7 +6,7 @@ name: Snowcones Deployment Pipeline
 on:
   # Triggers the workflow on push or pull request events but only for the "main" branch
   push:
-    branches: [ "Development", "main" ]
+    branches: [ "Development", "main"]
 
   # Allows you to run this workflow manually from the Actions tab
   workflow_dispatch:
@@ -52,12 +52,12 @@ jobs:
         
       # list the files in folder
       - name: List the files in folder
-        run: snow git list-files "@${{vars.SNOWFLAKE_DOMAINS_GIT_STG}}/branches/main/"
+        run: snow git list-files "@${{vars.SNOWFLAKE_DOMAINS_GIT_STG}}/branches/Development/"
 
       # Deploy pipeline later we can make it branch specific in v2     
       - name: Deploy Objects to Snowflake Development environment
-        run: snow git execute "@${{vars.SNOWFLAKE_DOMAINS_GIT_STG}}/branches/Development/deployment.sql" -D "database = '${{ vars.SNOWFLAKE_DOMAINS_DB }}'" -D "schema_name = '${{ vars.SNOWFLAKE_DOMAINS_SCHEMA }}'"
-
+        run: snow git execute "@snowcones_devops_poc.poc.git_repo_stg/branches/main/deployment.sql" -D "database = '${{ vars.SNOWFLAKE_DOMAINS_DB }}'" -D "schema_name = '${{ vars.SNOWFLAKE_DOMAINS_SCHEMA }}'" -D "stage_name = '${{ vars.SNOWFLAKE_BRANCH }}'"
+        
   prod-deployment:
     name: Deploying to Production Environment
     # The type of runner that the job will run on
@@ -101,4 +101,4 @@ jobs:
 
       # Deploy pipeline later we can make it branch specific in v2     
       - name: Deploy file to main branch
-        run: snow git execute "@${{vars.SNOWFLAKE_DOMAINS_GIT_STG}}/branches/main/deployment.sql" -D "database = '${{ vars.SNOWFLAKE_DOMAINS_DB }}'" -D "schema_name = '${{ vars.SNOWFLAKE_DOMAINS_SCHEMA }}'"
+        run: snow git execute "@${{vars.SNOWFLAKE_DOMAINS_GIT_STG}}/branches/main/deployment.sql" -D "database = '${{ vars.SNOWFLAKE_DOMAINS_DB }}'" -D "schema_name = '${{ vars.SNOWFLAKE_DOMAINS_SCHEMA }}'" -D "stage_name = '${{ vars.SNOWFLAKE_BRANCH }}'"
