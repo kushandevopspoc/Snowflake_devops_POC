@@ -56,4 +56,4 @@ jobs:
 
       # Deploy pipeline later we can make it branch specific in v2     
       - name: Deploy Objects to Snowflake Development environment
-        run: snow git execute "@snowcones_devops_poc.poc.git_repo_stg/branches/main/*.sql" -D "database = '${{ vars.SNOWFLAKE_DOMAINS_DB }}'" -D "schema_name = '${{ vars.SNOWFLAKE_DOMAINS_SCHEMA }}'"
+        run: snow git execute "@snowcones_devops_poc.poc.git_repo_stg/branches/main/*.sql" -D "database = '${{ vars.SNOWFLAKE_DOMAINS_DB }}'" -D "schema_name = '${{ vars.SNOWFLAKE_DOMAINS_SCHEMA }}'" -D "stage_name = '${{ vars.SNOWFLAKE_STAGE}}'"
